@@ -34,49 +34,50 @@ import { useState } from "react"
 const App = () => {
   const [username, setusername] = useState("");
   const [error, seterror] = useState(false);
-  const [gender,setgender]=useState("others")
+  const [gender, setgender] = useState("others")
 
   const sumbited = (e) => {
     e.preventDefault();
-    console.log(username,gender)
+    console.log(username, gender)
   }
   return (
     <div className='m-20 p-5 w-[80%] mx-auto bg-purple-400'>
       <form onSubmit={sumbited} >
         <input onChange={(e) => setusername(e.target.value)}
-         type="text" placeholder='username' name='username'
+          type="text" placeholder='username' name='username'
           value={username}
-           onInput={(e)=>e.target.value.length <5 ? seterror(true):seterror(false)} 
-          />
-          {error && (
-            <p className=" text-red-700">Username must be least 5 characterr</p>
-          )}
-        <input className='px-3 py-2 rounded-md bg-blue-900' type="submit" />
+          onInput={(e) => e.target.value.length < 5 ? seterror(true) : seterror(false)}
+        />
+
+        {error && (
+          <p className=" text-red-700">Username must be least 5 characterr</p>
+        )}
+
+        <input className='px-3 py-2 rounded-md bg-blue-800' type="submit" />
         <br /> <br />
-<input type="radio"
-name="gender" 
-checked={gender === "others" ? true :false}
-defaultValue="others"
-onChange={(e)=>setgender(e.target.value)}
-/>others
-<br /><br />
-<input type="radio"
-name="gender" 
-checked={gender === "female" ? true :false}
-defaultValue="female"
-onChange={(e)=>setgender(e.target.value)}
 
-/>female
-<br /><br />
-<input type="radio"
-name="gender" 
-checked={gender === "male" ? true :false}
-defaultValue="male"
-onChange={(e)=>setgender(e.target.value)}
+        <input type="radio"
+          name="gender"
+          checked={gender === "others" ? true : false}
+          defaultValue="others"
+          onChange={(e) => setgender(e.target.value)}
+        />others
+        <br /><br />
 
-/>male
-
-
+        <input type="radio"
+          name="gender"
+          checked={gender === "female" ? true : false}
+          defaultValue="female"
+          onChange={(e) => setgender(e.target.value)}
+        />female
+        
+        <br /><br />
+        <input type="radio"
+          name="gender"
+          checked={gender === "male" ? true : false}
+          defaultValue="male"
+          onChange={(e) => setgender(e.target.value)}
+        />male
       </form>
     </div>
   )
