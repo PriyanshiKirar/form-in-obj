@@ -53,7 +53,7 @@ const App = () => {
           <p className=" text-red-700">Username must be least 5 characterr</p>
         )}
 
-        <input className='px-3 py-2 rounded-md bg-blue-800' type="submit" />
+        <input className='px-3 py-2 rounded-md bg-blue-850 ' type="submit" />
         <br /> <br />
 
         <input type="radio"
